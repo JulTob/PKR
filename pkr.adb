@@ -1,3 +1,10 @@
+-----------------------------
+--  Poker Library
+--  Body File
+--  -- Julio A. Toboso Garcia
+-----------------------------
+
+
 with Ada.Numerics.Discrete_Random;
 
 package body PKR is
@@ -25,6 +32,22 @@ begin -- Saca_Carta
     Card.Value:=Random_Value;
     return Card;
 end New_Card;
+
+
+function New_Card (
+      Value: Value_Type;
+      color: color_type) return Card_t is
+      Card: Card_t;
+    begin
+      Card.value := Value;
+      Card.color := color;
+      return Card;
+    end New_Card;
+
+
+
+
+
 
 procedure Sacar_Carta(Card: in out Card_tp) is
 begin -- Sacar_Carta
