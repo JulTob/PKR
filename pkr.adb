@@ -109,9 +109,25 @@ begin -- Sacar_Carta
    return Card;
 end Sacar_Carta;
 
+procedure Put( C: Color_Tp) is
+	with Ada.Wide_Text_IO;
+	use Ada.wide_Text_IO;
+	--   Put("♡❤⚜♣♠♤♥♡♣♧♦♢");
+begin
+	case C is
+		when Picas =>   Put("♠");
+		when Treboles =>   Put("♣");
+		when Diamantes =>   Put("♦");
+		when Corazones =>   Put("♥");
+	end case;
+return Put;
+
+
+
 function Card_Image ( Card: Card_tp) return String is
 begin -- Card_Image
-   return (PKR.Value_tp'Image(Card.Value) & " " & PKR.Color_tp'Image(Card.Color) & " ");
+   return (PKR.Value_tp'Image(Card.Value) & " ");
+	 put(Card.Color);
 end Card_Image;
 
 function  Color_Base_N ( Color: Color_tp)
